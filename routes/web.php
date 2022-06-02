@@ -23,4 +23,6 @@ Route::get('/login/magic', [App\Http\Controllers\MagicLoginController::class, 's
 
 Route::post('/login/magic', [App\Http\Controllers\MagicLoginController::class, 'sendToken'])->name('login-magic-post');
 
+Route::get('/login/magic/{token}', [App\Http\Controllers\MagicLoginController::class, 'validateToken']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
