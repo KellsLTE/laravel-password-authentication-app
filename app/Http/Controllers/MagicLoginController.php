@@ -17,6 +17,8 @@ class MagicLoginController extends Controller
         $this->validateLogin($request);
 
         $auth->requestlink();
+
+        return redirect()->to('/login/magic')->withMessage("We've sent you a magic link!");
     }
 
     protected function validateLogin(Request $request)
